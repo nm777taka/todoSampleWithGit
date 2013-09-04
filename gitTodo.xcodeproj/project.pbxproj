@@ -21,6 +21,7 @@
 		0F3AC16817D7041B00BF5639 /* gitTodo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F3AC16617D7041B00BF5639 /* gitTodo.xcdatamodeld */; };
 		0F3AC17117D704E900BF5639 /* _Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3AC16E17D704E900BF5639 /* _Todo.m */; };
 		0F3AC17217D704E900BF5639 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3AC17017D704E900BF5639 /* Todo.m */; };
+		0F3AC17417D7060000BF5639 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3AC17317D7060000BF5639 /* CoreData.framework */; };
 		D2636991AD544B61A6BEBA5A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7298FF1097941C4846658AE /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		0F3AC16E17D704E900BF5639 /* _Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Todo.m; sourceTree = "<group>"; };
 		0F3AC16F17D704E900BF5639 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
 		0F3AC17017D704E900BF5639 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
+		0F3AC17317D7060000BF5639 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8BA173E0EBC34F91B499DD82 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A7298FF1097941C4846658AE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F3AC17417D7060000BF5639 /* CoreData.framework in Frameworks */,
 				0F3AC14417D700F300BF5639 /* UIKit.framework in Frameworks */,
 				0F3AC14617D700F300BF5639 /* Foundation.framework in Frameworks */,
 				0F3AC14817D700F300BF5639 /* CoreGraphics.framework in Frameworks */,
@@ -88,6 +91,7 @@
 		0F3AC14217D700F300BF5639 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F3AC17317D7060000BF5639 /* CoreData.framework */,
 				0F3AC14317D700F300BF5639 /* UIKit.framework */,
 				0F3AC14517D700F300BF5639 /* Foundation.framework */,
 				0F3AC14717D700F300BF5639 /* CoreGraphics.framework */,
