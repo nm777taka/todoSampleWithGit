@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "DetailViewController.h"
+#import "InsertViewController.h"
 
 #import "Todo.h"
 
@@ -38,6 +40,10 @@
     //配列の初期化
     self.todoObjects = [self fetchTodoObjects];
 }
+- (void)viewWillAppear:(BOOL)animated{
+    self.todoObjects = [self fetchTodoObjects];
+    [self.todoTable reloadData];
+}
 
 #pragma mark tableViewDelegate
 
@@ -61,6 +67,8 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //画面遷移
+    DetailViewController* detaicVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    [self.navigationController pushViewController:detaicVC animated:YES];
     
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -68,6 +76,22 @@
 }
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     //削除
+    if(editingStyle == UITableViewCellEditingStyleDelete){
+        //Entityの削除
+        Todo* object = [self.todoObjects objectAtIndex:indexPath.row];
+        [object MR_deleteEntity];
+        NSManagedObjectContext* context = [NSManagedObjectContext MR_defaultContext];
+        [context MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
+            if(!success){
+                NSLog(@"save error : %@",error);
+            }
+            
+            //配列を更新
+            self.todoObjects = [self fetchTodoObjects];
+            //セルの削除
+            [todoTable deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }];
+    }
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath*)indexPath{
@@ -81,8 +105,14 @@
 {
     return [Todo MR_findAllSortedBy:@"timeStamp" ascending:NO];
 }
+
+#pragma mark Action
 - (void)insertNewObjects:(id)sender{
     //画面遷移
+    InsertViewController* insertVC = [self.storyboard instantiateViewControllerWithIdentifier:@"InsertViewController"];
+    [self presentViewController:insertVC animated:YES completion:^{
+        NSLog(@"comp");
+    }];
 }
 
 - (void)didReceiveMemoryWarning

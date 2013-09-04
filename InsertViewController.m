@@ -14,25 +14,52 @@
 
 @implementation InsertViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.titleField.delegate = self;
+       
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark Action
+- (IBAction)addButton:(id)sender {
+    if([self.titleField.text length] == 0){
+        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"エラー" message:@"titleを入力してください" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
+    Todo* newTodo = [Todo MR_createEntity];
+    newTodo.titile = self.titleField.text;
+    newTodo.text = self.textField.text;
+    newTodo.timeStamp = [NSDate date];
+    
+    NSManagedObjectContext* context = [NSManagedObjectContext MR_defaultContext];
+    [context MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
+        if(success){
+            NSLog(@"----------> saved\n%@",newTodo);
+        }else{
+            NSLog(@"save error: %@",error);
+        }
+        
+        [self pushBack];
+    }];
+    
+}
+
+#pragma mark segue
+- (void)pushBack{
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"comp");
+    }];
+}
+
+#pragma mark titleFieldDele
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self.titleField resignFirstResponder];
+    return YES;
 }
 
 @end

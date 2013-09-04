@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Todo.h"
 
-@interface InsertViewController : UIViewController
+@interface InsertViewController : UIViewController<UITextFieldDelegate>
+- (IBAction)addButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *titleField;
+@property (weak, nonatomic) IBOutlet UITextView *textField;
+
+@property Todo *todoObject;
 
 @end
