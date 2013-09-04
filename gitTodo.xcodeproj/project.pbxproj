@@ -19,7 +19,8 @@
 		0F3AC15D17D700F300BF5639 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3AC15B17D700F300BF5639 /* MainStoryboard.storyboard */; };
 		0F3AC16017D700F300BF5639 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3AC15F17D700F300BF5639 /* ViewController.m */; };
 		0F3AC16817D7041B00BF5639 /* gitTodo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F3AC16617D7041B00BF5639 /* gitTodo.xcdatamodeld */; };
-		0F3AC16B17D7045600BF5639 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3AC16A17D7045600BF5639 /* Todo.m */; };
+		0F3AC17117D704E900BF5639 /* _Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3AC16E17D704E900BF5639 /* _Todo.m */; };
+		0F3AC17217D704E900BF5639 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3AC17017D704E900BF5639 /* Todo.m */; };
 		D2636991AD544B61A6BEBA5A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7298FF1097941C4846658AE /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +42,10 @@
 		0F3AC15E17D700F300BF5639 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0F3AC15F17D700F300BF5639 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0F3AC16717D7041B00BF5639 /* gitTodo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = gitTodo.xcdatamodel; sourceTree = "<group>"; };
-		0F3AC16917D7045600BF5639 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
-		0F3AC16A17D7045600BF5639 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
+		0F3AC16D17D704E900BF5639 /* _Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Todo.h; sourceTree = "<group>"; };
+		0F3AC16E17D704E900BF5639 /* _Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Todo.m; sourceTree = "<group>"; };
+		0F3AC16F17D704E900BF5639 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
+		0F3AC17017D704E900BF5639 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 		8BA173E0EBC34F91B499DD82 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A7298FF1097941C4846658AE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -65,8 +68,7 @@
 		0F3AC13717D700F300BF5639 = {
 			isa = PBXGroup;
 			children = (
-				0F3AC16917D7045600BF5639 /* Todo.h */,
-				0F3AC16A17D7045600BF5639 /* Todo.m */,
+				0F3AC16C17D704E900BF5639 /* Model */,
 				0F3AC16617D7041B00BF5639 /* gitTodo.xcdatamodeld */,
 				0F3AC14917D700F300BF5639 /* gitTodo */,
 				0F3AC14217D700F300BF5639 /* Frameworks */,
@@ -119,6 +121,17 @@
 				0F3AC15917D700F300BF5639 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0F3AC16C17D704E900BF5639 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0F3AC16D17D704E900BF5639 /* _Todo.h */,
+				0F3AC16E17D704E900BF5639 /* _Todo.m */,
+				0F3AC16F17D704E900BF5639 /* Todo.h */,
+				0F3AC17017D704E900BF5639 /* Todo.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,7 +239,8 @@
 				0F3AC15417D700F300BF5639 /* AppDelegate.m in Sources */,
 				0F3AC16017D700F300BF5639 /* ViewController.m in Sources */,
 				0F3AC16817D7041B00BF5639 /* gitTodo.xcdatamodeld in Sources */,
-				0F3AC16B17D7045600BF5639 /* Todo.m in Sources */,
+				0F3AC17117D704E900BF5639 /* _Todo.m in Sources */,
+				0F3AC17217D704E900BF5639 /* Todo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
