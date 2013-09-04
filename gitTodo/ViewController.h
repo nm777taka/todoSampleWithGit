@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,NSFetchedResultsControllerDelegate>{
-    UITableView* todoTable;
 }
 
 @property (strong,nonatomic) NSFetchedResultsController* fetchResultController;
 @property (strong,nonatomic) NSManagedObjectContext* managedContext;
+@property (weak, nonatomic) IBOutlet UITableView *todoTable;
 
 @end

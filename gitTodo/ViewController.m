@@ -20,6 +20,7 @@
 @end
 
 @implementation ViewController
+@synthesize todoTable;
 
 #pragma mark ViewCycle
 
@@ -27,16 +28,15 @@
 {
     [super viewDidLoad];
 	//tableViewを表示
-    todoTable = [[UITableView alloc]initWithFrame:self.view.frame];
     todoTable.delegate = self;
     todoTable.dataSource = self;
-    [self.view addSubview:todoTable];
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObjects:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
     //配列の初期化
+    self.todoObjects = [self fetchTodoObjects];
 }
 
 #pragma mark tableViewDelegate
@@ -61,6 +61,7 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //画面遷移
+    
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
